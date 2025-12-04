@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(uv add:*)",
+      "Bash(cat:*)",
+      "Bash(uv init:*)",
+      "Bash(git checkout:*)",
+      "Bash(xargs:*)",
+      "Bash(uv --help:*)",
+      "Bash(uv run python:*)",
+      "Bash(find:*)",
+      "Bash(python:*)",
+      "Bash(timeout:*)",
+      "Bash(uv run --active python:*)",
+      "Bash(uv sync:*)",
+      "Bash(tree:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

@@ -1,0 +1,2 @@
+- only powershell, cmd or python can be used for network detecting
+- always use "uv" to run python or install packages

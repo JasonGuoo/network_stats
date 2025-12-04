@@ -1,0 +1,50 @@
+# Network Stats Collector - Application Configuration
+
+app:
+  # Database configuration
+  database:
+    url: "sqlite:///network_stats.db"
+    pool_size: 5
+    echo: false
+
+  # Web server configuration
+  web:
+    host: "127.0.0.1"
+    port: 8080
+    debug: false
+    cors_origins:
+      - "http://127.0.0.1:8080"
+      - "http://localhost:8080"
+
+  # Logging configuration
+  logging:
+    level: "INFO"
+    file: "logs/network_stats.log"
+    format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+
+# Network monitoring jobs configuration
+jobs:
+  - name: "critical-servers"
+    interval: 300  # 5 minutes
+    enabled: true
+    metrics:
+      - "ping"
+      - "traceroute"
+    destinations:
+      - host: "8.8.8.8"
+        display_name: "Google DNS"
+      - host: "1.1.1.1"
+        display_name: "Cloudflare DNS"
+      - host: "localhost"
+        display_name: "Local Machine"
+
+  - name: "workstations"
+    interval: 900  # 15 minutes
+    enabled: false
+    metrics:
+      - "ping"
+    destinations:
+      - host: "192.168.1.100"
+        display_name: "Workstation 1"
+      - host: "192.168.1.101"
+        display_name: "Workstation 2"

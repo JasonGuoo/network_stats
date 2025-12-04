@@ -1,0 +1,16 @@
+[project]
+name = "network-stats"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "aiosqlite>=0.21.0",
+    "fastapi>=0.123.5",
+    "jinja2>=3.1.6",
+    "pydantic>=2.12.5",
+    "python-multipart>=0.0.20",
+    "pyyaml>=6.0.3",
+    "sqlalchemy>=2.0.44",
+    "uvicorn>=0.38.0",
+]
